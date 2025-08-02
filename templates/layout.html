@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="has-background-grey-lighter">
+<html class="modern-theme">
 
 <head>
     {% block csp %}
@@ -23,7 +23,7 @@
 
 <body>
     <header>
-        <nav class="level is-mobile has-background-white">
+        <nav class="level is-mobile modern-nav">
             <div class="level-left navbar-item">
                 <div class="level is-mobile">
                     {% block menu_left %}
@@ -101,7 +101,7 @@
             </main>
             <aside class="column is-one-quarter pr-0">
                 {% block aside %}
-                    <div class="box">
+                    <div class="modern-card">
                         <form id="search" action="/search" method="get">
                             <fieldset>
                                 <div class="field has-addons">
@@ -117,7 +117,7 @@
                     </div>
                     {% match page_data.claim %} {% when Some with (val) %}
                         {% if val.role == 255 %}
-                            <div class="box">
+                            <div class="modern-card">
                                 <a href="/admin">
                                     <span class="tag is-info">{{ "site_settings"|l10n(page_data.lang) }}</span>
                                 </a>

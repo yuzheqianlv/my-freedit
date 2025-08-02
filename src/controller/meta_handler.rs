@@ -107,6 +107,9 @@ static CSS: LazyLock<String> = LazyLock::new(|| {
     css.push_str(include_str!("../../static/css/bulma-list.css"));
     css.push('\n');
     css.push_str(include_str!("../../static/css/main.css"));
+    css.push('\n');
+    // Use ultra-minimal theme instead of GPU-heavy themes
+    css.push_str(include_str!("../../static/css/ultra-minimal-theme.css"));
     css
 });
 

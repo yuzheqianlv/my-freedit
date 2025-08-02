@@ -1025,7 +1025,7 @@ pub(crate) async fn signout(
     }
 
     let cookie = format!(
-        "{COOKIE_NAME}=deleted; SameSite=Strict; Path=/; Secure; HttpOnly; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+        "{COOKIE_NAME}=deleted; SameSite=Strict; Path=/; HttpOnly; expires=Thu, 01 Jan 1970 00:00:00 GMT"
     );
     let mut headers = HeaderMap::new();
     headers.insert(SET_COOKIE, cookie.parse().unwrap());
@@ -1226,7 +1226,7 @@ impl Claim {
         set_one_with_key(db, "sessions", &session_id, &claim)?;
 
         let cookie = format!(
-            "{COOKIE_NAME}={session_id}; SameSite=Strict; Path=/; Secure; HttpOnly; Max-Age={seconds}"
+            "{COOKIE_NAME}={session_id}; SameSite=Strict; Path=/; HttpOnly; Max-Age={seconds}"
         );
         Ok(cookie)
     }

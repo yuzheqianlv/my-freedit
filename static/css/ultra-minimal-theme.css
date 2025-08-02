@@ -1,0 +1,178 @@
+/* Ultra Minimal Theme - Zero GPU consumption */
+
+:root {
+    /* Simple color palette - no gradients */
+    --bg-primary: #f5f3f0;
+    --bg-secondary: #edeae6;
+    --bg-card: #f8f7f5;
+    --text-primary: #3a3632;
+    --text-secondary: #5d5950;
+    --text-muted: #7a756e;
+    --border-color: #d4d1ca;
+    --accent-color: #a69688;
+    --hover-bg: #e8e5e1;
+}
+
+/* Remove all GPU-intensive effects */
+*,
+*::before,
+*::after {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    backdrop-filter: none !important;
+    filter: none !important;
+}
+
+/* Simple solid backgrounds only */
+html {
+    background: var(--bg-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: transparent;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* Cards with simple borders */
+.modern-card,
+.box {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Simple navigation */
+nav.level {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Basic buttons */
+.button {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--hover-bg);
+}
+
+.button.is-info {
+    background: var(--accent-color);
+    color: var(--bg-card);
+    border-color: var(--accent-color);
+}
+
+.button.is-success {
+    background: #8d9d7a;
+    color: var(--bg-card);
+    border-color: #8d9d7a;
+}
+
+/* Simple inputs */
+.input,
+.textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    padding: 0.5rem;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+/* Basic tags */
+.tag {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    color: var(--text-primary);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.tag.is-info {
+    background: var(--accent-color);
+    color: var(--bg-card);
+    border-color: var(--accent-color);
+}
+
+/* No hover effects for better performance */
+.tag:hover,
+.modern-card:hover {
+    /* No hover effects */
+}
+
+/* Simple footer */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* No complex layouts */
+.section {
+    background: transparent;
+}
+
+/* Disable all animations globally */
+* {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+}
+
+/* Remove all shadows and effects */
+.modern-card,
+.box,
+.button,
+nav {
+    box-shadow: none !important;
+}
+
+/* Simple tabs */
+.tabs li a {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.tabs li.is-active a,
+.tabs li a:hover {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary);
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 768px) {
+    .modern-card,
+    .box {
+        border-radius: 2px;
+        margin-bottom: 0.5rem;
+    }
+}
